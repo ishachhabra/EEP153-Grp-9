@@ -1,0 +1,27 @@
+# REPLACE THIS IMPORT LATER
+# from src.visualizations import plot_population_pyramid, plot_water_vs_population
+# Population pyramids, water vs population plots
+# only testing that plots don’t crash, not aestheticsn
+
+def test_population_pyramid_runs():
+     # Attempt to generate a population pyramid
+    try:
+        plot_population_pyramid(2010, "USA")
+    # If an error occurs, the test should fail
+    except Exception as e:
+        assert False, f"Population pyramid failed: {e}"
+
+def test_population_pyramid_multiple_countries():
+     # Test the pyramid function for multiple countries
+    for country in ["USA", "IND", "BRA"]:
+        try:
+            plot_population_pyramid(2010, country)
+        except Exception:
+            assert False, f"Population pyramid failed for {country}"
+
+# Attempt to generate a water vs population visualization
+def test_water_vs_population_plot_runs():
+    try:
+        plot_water_vs_population("USA")
+    except Exception as e:
+        assert False, f"Water vs population plot failed: {e}"
