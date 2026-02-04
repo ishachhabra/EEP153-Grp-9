@@ -1,0 +1,36 @@
+# REPLACE THIS IMPORT LATER
+# from src.population import population, population_by_age_se
+# replace later: population, population_by_age_sexx
+
+def test_population_non_negative
+    # Call the population function for the world in year 2000():
+    pop = population(year=2000, sex="all", age_range=[0, 100], place="WLD")
+    # Population counts should never be negative
+    assert pop >= 0, "Population should not be negative"
+
+
+def test_population_multiple_countries():
+    for country in ["USA", "IND", "BRA"]:
+        pop = population(2010, "all", [0, 100],
+        # Every real country should have a positive population country
+        assert pop > 0, f"Population should be positive for {country}"
+
+
+def test_population_sex_co
+     # Retrieve total populationnsistency():
+    total = population(2010, "all", [0, 100], "WLD")
+     # Retrieve male population
+    males = population(2010, "males", [0, 100], "WLD")
+     # Retrieve female population
+    females = population(2010, "females", [0, 100], "WLD")    
+
+
+# Generate a DataFrame suitable for population pyramids
+assert abs((males + females) - total) / total < 0.05, \
+"Male + Female population should approximately equal total"
+
+
+def test_population_dataframe_structure():
+    df = population_by
+    # Verify required columns exist for visualization_age_sex(2010, "USA")
+    assert {"age_group", "sex", "population"}.issubset(df.columns)
